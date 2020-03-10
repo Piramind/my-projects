@@ -1,10 +1,6 @@
 import telebot
-  
-
-
 
 bot = telebot.TeleBot('')
-
 
 @bot.message_handler(command=['start'])
 def get_start(message):
