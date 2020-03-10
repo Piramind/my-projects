@@ -1,9 +1,9 @@
 import telebot
   
 
-#access_token = '893829779:AAECMCp4GWzZfZ4OXm7nM7BfP-nTNGNmAhw'
 
-bot = telebot.TeleBot('893829779:AAECMCp4GWzZfZ4OXm7nM7BfP-nTNGNmAhw')
+
+bot = telebot.TeleBot('')
 
 
 @bot.message_handler(command=['start'])
