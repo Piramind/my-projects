@@ -1,8 +1,20 @@
-# -*- coding: utf-8 -*-
-
 import requests
 from bs4 import BeautifulSoup
 import time
+from bottle import route, run, template
+ 
+def login():
+    with open("viev.html"):
+        if request.method == 'POST': 
+            username = request.form['username'] 
+            password = request.form['password'] 
+            return password
+       
+        else: 
+            # an exception
+            return None
+
+
 
 # достает html код по указанной ссылке
 def get_html(url):      
@@ -152,7 +164,7 @@ def parse_offers(links):
 """
 
 if __name__ == '__main__':
-    query = 'менеджер+по+продажам'
+    query = login()
     area = '2'
     # сначала вытащим все ссылки на вакансии по данному запросу и региону
     links = get_all_offers_links(query, area)
