@@ -1,4 +1,5 @@
 from django.db import models
 
 
-class Task(models.M)
+class Task(models.M):
+    pass

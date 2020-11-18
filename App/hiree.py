@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 from bottle import route, run, template
- 
+
 def login():
     with open("viev.html"):
         if request.method == 'POST': 
@@ -13,7 +13,7 @@ def login():
         else: 
             # an exception
             return None
-
+            
 
 
 # достает html код по указанной ссылке
