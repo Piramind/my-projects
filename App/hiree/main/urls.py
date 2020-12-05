@@ -1,4 +1,4 @@
 from django.urls import path
-from . import vievs
+from main import views
 urlpatterns = [
-    path('', vievs.index)]
+    path('', views.index)]

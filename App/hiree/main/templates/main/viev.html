@@ -1,3 +1,4 @@
+<html>
 <div id="container_demo" >
     <!-- спрятанный якорь, чтобы избежать прыжков http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
     <a class="hiddenanchor" id="tosubscribe"></a>
@@ -6,13 +7,13 @@
         <div id="login" class="animate form">
             <form  action="hiree.py" method=”POST”>
                 <h1>Search</h1>
-                <p><select name="food">
-                    <option value="r1">Закуска Барская</option>
-                    <option value="r2">Раки, фаршированные по-царски</option>
-                    <option value="r3">Биточки в горшочке</option></p>
+                <p>
+                    <label for="login" class="youpasswd" data-icon="p"> </label>
+                    <input id="login" name="login" required="required" type="text" placeholder="специализация" />
+                </p>
                 <p>
                     <label for="password" class="youpasswd" data-icon="p"> </label>
-                    <input id="password" name="password" required="required" type="password" placeholder="специализация" />
+                    <input id="password" name="password" required="required" type="text" placeholder="специализация" />
                 </p>
                 <p class="login button">
                     <input type="submit" value="Search" />
@@ -20,6 +21,50 @@
             </form>
         </div>
             </form>
+            <head>
+
+<script language="Javascript" >
+function download(filename, text) {
+  var pom = document.createElement('a');
+  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
+
+encodeURIComponent(text));
+  pom.setAttribute('download', filename);
+
+  pom.style.display = 'none';
+  document.body.appendChild(pom);
+
+  pom.click();
+
+  document.body.removeChild(pom);
+}
+
+function addTextHTML()
+{
+    document.addtext.name.value = document.addtext.name.value + ".html"
+}
+
+function addTextTXT()
+{
+    document.addtext.name.value = document.addtext.name.value + ".txt"
+}
+</script>
+
+</head>
+<body>
+
+<form name="addtext" onsubmit="download(this['name'].value, this['text'].value)">
+
+<textarea rows="1" cols="50" name="text" placeholder="Type your query"></textarea>
+<br>
+<input type="text" name="name" value="" placeholder="File Name">
+<input type="submit" onClick="addTextHTML();" value="Save As HTML">
+<input type="submit" onClick="addTexttxt();" value="Save As TXT">
+
+</form>
+</body>
+
         </div>
     </div>
 </div>
+</html>
