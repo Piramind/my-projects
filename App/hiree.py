@@ -19,6 +19,7 @@ def index():
 run(host='localhost', port=8080)
 """
 
+
 with open('test.txt', 'r') as file:
     value_d = file.read  #передаем значение файла в переменную
     print(value_d)
