@@ -34,6 +34,8 @@ def get_html(url, f=True):
     return rq.text
 
 
+
+
 # проверяет, есть ли на странице ссылки на вакансии
 def is_empty(html):
     soup = BeautifulSoup(html, 'lxml')
