@@ -9,17 +9,6 @@ from bottle import request, route, run, view
 
 local_proc = 0
 
-"""
-@route('/', method=['GET', 'POST'])
-@view('form_template')
-def index():
-    return dict(parts=request.forms.sentence.split(), # split on whitespace
-                show_form=request.method=='GET') # show form for get requests
-
-run(host='localhost', port=8080)
-"""
-
-
 with open('test.txt', 'r') as file:
     value_d = file.read  #передаем значение файла в переменную
     print(value_d)
@@ -32,7 +21,6 @@ def get_html(url, f=True):
     if(f):
         print('Getting HTML-code from ', url)
     return rq.text
-
 
 
 
@@ -61,20 +49,11 @@ def get_all_resumes_links(query, area):
     # page_is_not_empty = True
 
     all_links = []
-    # page = 1
-
     for i in range(3):
         url = url_base + url_area+url_base2 + url_text + url_page + str(i)
         # time.sleep(.5)
         html = get_html(url)
         all_links = get_resumes_links(html, all_links)
-        """if not is_empty(html):
-            all_links = get_resumes_links(html, all_links)
-
-            page += 1
-        else:
-            page_is_not_empty = False
-        """
     return all_links
 
 
@@ -155,16 +134,6 @@ def sort_relevant_jobs(keyword):
         for k in sorted(data, key=data.get, reverse=True):
             f.write(k + ' ' + str(data[k]) + '\n')
 
-
-'''
-def parse_line_of_buisiness(soup):
-    bad_companies = ["Элтех", "Элтех-СПб", "Элтех-Комплект",
-                     "Планар-СПб", "МЛТ", "НПК" "Трансэт", "Платан"]
-    company = soup.find("companyName")
-    if(company in bad_companies):
-        return False
-    return True
-'''
 
 
 def parse_resumes(links):
