@@ -6,7 +6,7 @@
     <a class="hiddenanchor" id="tosubscribe"></a>
     <a class="hiddenanchor" id="tologin"></a>
     <div id="wrapper">
-        <div id="login" class="animate form">
+        <div id="login" class="login button">
             <form  action="hiree.py" method=”POST”>
                 <h1>Search</h1>
                 <p>
@@ -18,55 +18,13 @@
                     <input id="password" name="password" required="required" type="text" placeholder="специализация" />
                 </p>
                 <p class="login button">
-                    <input type="submit" value="Search" />
+                    <input type="submit" value="Search">
                 </p>
             </form>
         </div>
             </form>
             <head>
 
-<script language="Javascript" >
-function download(filename, text) {
-  var pom = document.createElement('a');
-  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
 
-encodeURIComponent(text));
-  pom.setAttribute('download', filename);
 
-  pom.style.display = 'none';
-  document.body.appendChild(pom);
-
-  pom.click();
-
-  document.body.removeChild(pom);
-}
-
-function addTextHTML()
-{
-    document.addtext.name.value = document.addtext.name.value + ".html"
-}
-
-function addTextTXT()
-{
-    document.addtext.name.value = document.addtext.name.value + ".txt"
-}
-</script>
-
-</head>
-<body>
-
-<form name="addtext" onsubmit="download(this['name'].value, this['text'].value)">
-
-<textarea rows="1" cols="50" name="text" placeholder="Type your query"></textarea>
-<br>
-<input type="text" name="name" value="" placeholder="File Name">
-<input type="submit" onClick="addTextHTML();" value="Save As HTML">
-<input type="submit" onClick="addTexttxt();" value="Save As TXT">
-
-</form>
-</body>
-
-        </div>
-    </div>
-</div>
 </html>
