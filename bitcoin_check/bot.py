@@ -6,7 +6,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 import json
 
 
-bot = Bot(token='5554364943:AAFmxTycE1tJ2bQFY9UrOhPpKBQ3SQLXGw4')
+bot = Bot(token='')
 dp = Dispatcher(bot)
 
 button_btc_usdt, button_eth_usdt, button_sol_usdt = KeyboardButton('btc_usdt'), KeyboardButton('eth_usdt'), KeyboardButton('sol_usdt')
