@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher, types, executor
 from cachetools import cached, TTLCache
 import requests
 import json
-import bs4
+#import bs4
 
 
 
@@ -21,24 +21,21 @@ async def cmd_start(message: types.Message):
 
 
 
-class CountryService:
-
     # 3 hours cache time
-    cache = TTLCache(maxsize=100, ttl=10800)
+cache = TTLCache(maxsize=100, ttl=10800)
 
-    @cached(cache)
-    def get_information(self):
-        url = 'https://niivs.elma365.ru/pub/v1/app/LK/list'
-        geo_result = requests.request('GET', url)
-        return geo_result.json()
+@cached(cache)
+def get_information(self):
+    url = 'https://elmt.niivs.ru/pub/v1/app/test_notes/test_notes/list'
+    geo_result = requests.request('POST', url, '')
 
-    @dp.message_handler(commands=['help'])
-    async def help_menu(message: types.Message, geo_result):
-        await message.reply(message.chat.id, geo_result.json)
+    print(json.dump(geo_result))
+    return geo_result()
 
-def get_request_from_elma_list(self):
-    pass
-    #return response.json
+@dp.message_handler(commands=['help'])
+async def help_menu(message: types.Message, geo_result):
+    await message.reply(message.chat.id, geo_result)
+
 
 
 if __name__ == '__main__':
