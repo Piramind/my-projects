@@ -4,9 +4,10 @@ import json
 import random
 import asyncio
 from datetime import datetime, timedelta
+import os
 
-TOKEN = '${TOKEN}'
-CHANNEL_ID = '${CHANNEL_ID}'
+TOKEN = os.getenv('DISCORD_TOKEN')
+CHANNEL_ID = os.getenv('DISCORD_CHANNEL_ID')
 MEME_API_URL = 'https://meme-api.herokuapp.com/gimme'
 
 client = discord.Client()
