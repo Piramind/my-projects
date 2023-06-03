@@ -30,4 +30,4 @@ jobs:
 
     - name: Run bot
       run: |
-        python bot.py
+        python index.py
